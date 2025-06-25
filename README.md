@@ -1,13 +1,16 @@
+# UI Highlights
+
+# Main App Interface:
+
 # 1.Food Ordering App UI:
+![Ui](https://github.com/user-attachments/assets/a3aeeefc-b06e-409b-ad53-d1ddc6501946)
 
 
-<img width="953" alt="food1" src="https://github.com/user-attachments/assets/bcc4567f-b563-476c-a31b-d4852ad7243d" />
+![Screenshot (82)](https://github.com/user-attachments/assets/2ba67018-152f-4229-b62d-7ce120dd706f)
 
 # 2.Top Rated Restaurant UI:
 
-<img width="956" alt="topRatedRestaurant" src="https://github.com/user-attachments/assets/3a5266fc-4542-4dae-9d59-8ac723790a04" />
-
-
+![Screenshot 2025-06-25 155325](https://github.com/user-attachments/assets/dfc5b660-a032-44fb-8f62-2fcd5011713f)
 
 
 # React ✨🎉
