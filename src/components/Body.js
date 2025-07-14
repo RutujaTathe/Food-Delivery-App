@@ -2,24 +2,33 @@ import RestaurantCard from "./RestaurantCard";
 import React, { useEffect, useState } from "react";
 import resList from "../Utils/MockData";
 import Shimmer from "./Shimmer";
+import ChooseMenu from "./ChooseMenu";
 let resObj = resList;
-console.log("resObj", resObj);
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-
+  const [listOfMenu, setListOfMenu] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     fetchData();
   }, []);
+  useEffect(() => {
+    chooseMenu();
+  }, []);
+
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5511264&lng=73.94406459999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
+
+    //for displying title
+    let title1 = json?.data?.cards[0].card.card.header.title;
+
     resObj =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
@@ -27,8 +36,19 @@ const Body = () => {
     console.log("modify Resobj object after api call", resObj);
     setListOfRestaurant(resObj);
     setFilteredRestaurant(resObj);
+    setTitle(title1);
   };
 
+  const chooseMenu = async () => {
+    const data = await fetch(
+      "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5511264&lng=73.94406459999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const json = await data.json();
+    resObj = json?.cards.card[0].card.imageGridCards.info;
+
+    setListOfMenu(resObj);
+  };
   //conditional rendering
 
   return listOfRestaurant.length == 0 ? (
@@ -83,6 +103,12 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+      </div>
+      {/* <h2 className="title">{title}</h2> */}
+      <div className="choose-menu">
+        {listOfMenu.map((restaurant) => (
+          <ChooseMenu key={restaurant.id} resData={restaurant} />
+        ))}
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
