@@ -6,6 +6,7 @@ import About from "./components/about";
 import Error from "./components/Error";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import ContactUs from "./components/ContactUs";
+import RestaurantMenu from "./components/RestaurantMenu";
 const styleCard = {
   backgroundColor: "#f0f0f0",
 };
@@ -13,9 +14,9 @@ const styleCard = {
 const APPLayout = () => {
   return (
     <div className="app">
-      {/*Header */}
+      {/** Header */}
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
@@ -24,20 +25,24 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <APPLayout />,
+    children: [
+      { path: "/", element: <Body /> },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
+        element: <ContactUs />,
+      },
+      { path: "/restaurants/:resId", element: <RestaurantMenu /> },
+    ],
     errorElement: <Error />,
   },
 
   {
     path: "",
     element: <Body />,
-  },
-  {
-    path: "about",
-    element: <About />,
-  },
-  {
-    path: "contact",
-    element: <ContactUs />,
   },
 ]);
 

@@ -68,3 +68,7 @@ import component from "path";
 - ( Normal Js utility function) develop by facebook developer
 - useState() -superpowerful state variable in react
 - useEffect()
+
+# Types of routing in web aap:
+1.client side routing
+2.server side routing(index.html): get the network call 
