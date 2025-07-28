@@ -14,13 +14,13 @@
 
 # React ✨🎉
 
-# Parcel
+# Parcel(https://parceljs.org/docs/)
 
 - dev build
 - local server
 - HMR(hot module replacement/auto refresh)
 - file watching algorithm -written in c++
-- Caching-faster build
+- Caching-faster builds
 - image optimization
 - Minification of file
 - bundling
