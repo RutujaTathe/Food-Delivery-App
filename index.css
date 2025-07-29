@@ -58,12 +58,14 @@ h2 {
   margin-left: 15px;
   margin-right: 15px;
   padding: 1.1rem;
-  width: 18%;
+  width: 90%;
   height: 290px;
   background-color: white;
   border: 1px solid none;
   border-radius: 5%;
+  gap: 10%;
 }
+
 .res-card:hover {
   border: 1px solid rgb(196, 196, 196);
   cursor: pointer;
@@ -104,8 +106,9 @@ h2 {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 3rem;
 }
+
 .filter-btn {
   margin: 10px;
   cursor: pointer;
@@ -174,4 +177,18 @@ h2 {
 .title {
   margin-bottom: 0;
   margin-left: 90px;
+}
+
+.res-container a {
+  color: black;
+  text-decoration: none;
+}
+
+.res-container a:visited,
+.res-container a:active {
+  color: black;
+}
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
 }
