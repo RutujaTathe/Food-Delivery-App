@@ -1,6 +1,10 @@
 # Main App Interface:
 
 # 1.Food Ordering App UI:
+<img width="959" height="470" alt="Dashboard" src="https://github.com/user-attachments/assets/2e612880-48d3-4984-b974-b149214e04ac" />
+
+
+
 ![Screenshot 2025-06-27 000806](https://github.com/user-attachments/assets/b86ec153-e0b0-4b3a-a577-5f213a086a4a)
 
 ![Ui](https://github.com/user-attachments/assets/a3aeeefc-b06e-409b-ad53-d1ddc6501946)
