@@ -4,6 +4,8 @@ import resList from "../Utils/MockData";
 import Shimmer from "./Shimmer";
 import ChooseMenu from "./ChooseMenu";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../Utils/useOnlineStatus";
+import OfflineGame from "./OfflineGame";
 let resObj = resList;
 
 const Body = () => {
@@ -45,7 +47,10 @@ const Body = () => {
     setFilteredRestaurant(resObj);
     setTitle(title1);
   };
-
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return <OfflineGame />;
+  }
   const chooseMenu = async () => {
     const data = await fetch(
       "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5511264&lng=73.94406459999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
