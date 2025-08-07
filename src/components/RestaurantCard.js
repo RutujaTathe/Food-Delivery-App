@@ -2,14 +2,13 @@ const RestaurantCard = (props) => {
   const { resData } = props;
 
   return (
-    <div className="res-card">
+    <div className="m-4 p-4 w-[250px] bg-white transform transition-transform duration-300 hover:scale-95">
       <img
-        className="res-logo"
+        className="w-full h-48 rounded-2xl"
         alt="res-logo"
-        style={{ width: "100%", height: "150px" }}
         src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/${resData.info.cloudinaryImageId}`}
       />
-      <h3>{resData.info.name}</h3>
+      <h3 className="font-bold py-2 text-lg">{resData.info.name}</h3>
       <h5>
         {Array.isArray(resData.info.cuisines)
           ? resData.info.cuisines.join(", ")

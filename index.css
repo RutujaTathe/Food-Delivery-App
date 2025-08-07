@@ -1,15 +1,12 @@
-/* #heading {
-  color: red;
-}
-#child {
-  color: Blue;
-}
-#child2 {
-  color: red;
-}
-h2 {
-  color: green;
-} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+/* 
 .body {
   width: 100%;
   background-color: rgb(250, 246, 246);
@@ -114,7 +111,6 @@ h2 {
   cursor: pointer;
 }
 
-/* shimmer card*/
 .shimmer-card {
   text-align: start;
   margin-top: 20px;
@@ -191,4 +187,4 @@ h2 {
 .user-card {
   padding: 10px;
   border: 1px solid black;
-}
+} */

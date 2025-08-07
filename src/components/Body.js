@@ -64,7 +64,7 @@ const Body = () => {
   //conditional rendering
 
   return listOfRestaurant.length == 0 ? (
-    <div className="shimmer-container">
+    <div>
       {Array(15)
         .fill()
         .map((_, index) => (
@@ -72,18 +72,19 @@ const Body = () => {
         ))}
     </div>
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div>
+      <div className="filter flex ">
+        <div className="search m-4 p-4 ">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               //filter by restraunt cards and update the UI
               //serachText
@@ -101,20 +102,22 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="toprated"
-          onClick={() => {
-            const FilteredList = listOfRestaurant.filter(
-              (res) => res.info.avgRating > 4
-            );
+        <div className="search m-4 p-4 flex items-center rounded-lg">
+          <button
+            className="px-4 py-2 bg-gray-100"
+            onClick={() => {
+              const FilteredList = listOfRestaurant.filter(
+                (res) => res.info.avgRating > 4
+              );
 
-            console.log("filterList", FilteredList);
+              console.log("filterList", FilteredList);
 
-            setFilteredRestaurant(FilteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+              setFilteredRestaurant(FilteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
       {/* <h2 className="title">{title}</h2> */}
       <div className="choose-menu">
@@ -122,7 +125,7 @@ const Body = () => {
           <ChooseMenu key={restaurant.id} resData={restaurant} />
         ))}
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap  px-24  gap-5 rounded-lg ">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
