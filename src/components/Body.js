@@ -125,7 +125,7 @@ const Body = () => {
           <ChooseMenu key={restaurant.id} resData={restaurant} />
         ))}
       </div>
-      <div className="flex flex-wrap  px-24  gap-5 rounded-lg ">
+      <div className="flex flex-wrap  px-12  gap-1 rounded-lg ">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
