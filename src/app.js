@@ -7,6 +7,8 @@ import Error from "./components/Error";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import ContactUs from "./components/ContactUs";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./Utils/UserContext.js";
+import { useState, useEffect } from "react";
 const styleCard = {
   backgroundColor: "#f0f0f0",
 };
@@ -14,12 +16,25 @@ const styleCard = {
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const APPLayout = () => {
+  const [userName, setUserName] = useState();
+  //authentication
+  useEffect(() => {
+    //make the api call and send username and password
+    const data = {
+      name: "rutuja tathe",
+    };
+    setUserName(data.name);
+  }, []);
   return (
-    <div className="app">
-      {/** Header */}
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: userName,setUserName }}>
+      <div className="app">
+        <UserContext.Provider value={{ loggedInUser: "elon musk" }}>
+          {/** Header */}
+          <Header />
+        </UserContext.Provider>
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

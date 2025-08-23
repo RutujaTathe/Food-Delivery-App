@@ -1,11 +1,12 @@
-import RestaurantCard from "./RestaurantCard";
-import React, { useEffect, useState } from "react";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
+import React, { useEffect, useState, useContext } from "react";
 import resList from "../Utils/MockData";
 import Shimmer from "./Shimmer";
 import ChooseMenu from "./ChooseMenu";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import OfflineGame from "./OfflineGame";
+import UserContext from "../Utils/UserContext";
 let resObj = resList;
 
 const Body = () => {
@@ -14,7 +15,8 @@ const Body = () => {
   const [listOfMenu, setListOfMenu] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [title, setTitle] = useState("");
-
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+  console.log("body rendered", listOfRestaurant);
   useEffect(() => {
     fetchData();
   }, []);
@@ -62,7 +64,7 @@ const Body = () => {
     setListOfMenu(resObj);
   };
   //conditional rendering
-
+  const { setUserName, loggedInUser } = useContext(UserContext);
   return listOfRestaurant.length == 0 ? (
     <div>
       {Array(15)
@@ -118,6 +120,14 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
+        <div className="search m-4 p-4 flex items-center rounded-lg">
+          <label>UserName: </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          ></input>
+        </div>
       </div>
       {/* <h2 className="title">{title}</h2> */}
       <div className="choose-menu">
@@ -131,6 +141,9 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
+            {/**if the restaurant is promoted then add a promoted label to card */}
+            {/* restaurant.data.promoted? */}
+            {/* <RestaurantCardPromoted resData={restaurant} />: */}
             <RestaurantCard resData={restaurant} />
           </Link>
         ))}

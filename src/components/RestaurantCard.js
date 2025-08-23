@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import UserContext from "../Utils/UserContext";
+
 const RestaurantCard = (props) => {
   const { resData } = props;
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <div className="m-4 p-4 w-[250px] bg-white transform transition-transform duration-300 hover:scale-95">
@@ -22,10 +26,26 @@ const RestaurantCard = (props) => {
           <li>{resData.info.costForTwo}</li>
 
           <li>{resData.info.sla.slaString} </li>
+          {/* <li>user:{loggedInUser}</li> */}
         </ul>
       </div>
     </div>
   );
 };
 
+//higer order component
+//higher order component
+//input-RestaurantCard=> Restaurant card prmoted
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
 export default RestaurantCard;
