@@ -41,9 +41,9 @@ const Header = () => {
             </Link>
           </li>
           <li className="px-4 font-bold underline">Cart</li>
-          <li className="px-4 font-bold underline">
+          {/* <li className="px-4 font-bold underline">
             {loggedInUser}
-          </li>
+          </li> */}
 
           <button
             className="bg-blue-400 font-bold hover:bg-blue-200 hover:text-black mx-2 px-4 py-1 items-center "

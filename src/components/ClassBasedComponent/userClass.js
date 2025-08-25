@@ -16,10 +16,10 @@ class UserClass extends React.Component {
       },
     };
   }
-   async componentDidMount() {
-    this.timer=setInterval(()=>{
-        console.log("interval")
-    },1000)
+  async componentDidMount() {
+    this.timer = setInterval(() => {
+      console.log("interval");
+    }, 1000);
     //api calls
     const data = await fetch("https://api.github.com/users/RutujaTathe");
     const json = await data.json();
@@ -45,8 +45,6 @@ class UserClass extends React.Component {
     console.log("componnet did updated call");
   }
 
- 
-
   render() {
     // const { name, location, contact } = this.props;
     const { count, count2 } = this.state;
@@ -68,7 +66,7 @@ class UserClass extends React.Component {
         > 
           Count Increase
         </button> */}
-        <img src={avatar_url}></img>
+        <img src={avatar_url} className="w-44 h-44 rounded"></img>
         <h2>Name:{name}</h2>
         <h3>Location:{location}</h3>
         {/* <p>{bio}</p> */}

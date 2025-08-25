@@ -10,7 +10,7 @@ const ItemList = ({ items, dummy }) => {
         >
           <div className="6/12">
             <p className="py-2 text-left ">{item.card.info.name}</p>
-            <p className="text-left">₹ {item.card.info.defaultPrice / 100}</p>
+            <p className="text-left">₹ {item.card.info.price / 100}</p>
             <p className="text-xs text-left">{item.card.info.description}</p>
           </div>
           <div className="w-6/12 flex justify-end align-middle my-6 mx-2">
