@@ -9,6 +9,9 @@ import ContactUs from "./components/ContactUs";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./Utils/UserContext.js";
 import { useState, useEffect } from "react";
+import { Provider } from "react-redux";
+import appStore from "./Utils/appStore.js";
+import Cart from "./components/cart.js";
 const styleCard = {
   backgroundColor: "#f0f0f0",
 };
@@ -26,15 +29,17 @@ const APPLayout = () => {
     setUserName(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName,setUserName }}>
-      <div className="app">
-        <UserContext.Provider value={{ loggedInUser: "elon musk" }}>
-          {/** Header */}
-          <Header />
-        </UserContext.Provider>
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <UserContext.Provider value={{ loggedInUser: "Rutuja Tathe" }}>
+            {/** Header */}
+            <Header />
+          </UserContext.Provider>
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -61,6 +66,10 @@ const appRouter = createBrowserRouter([
         ),
       },
       { path: "/restaurants/:resId", element: <RestaurantMenu /> },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
     errorElement: <Error />,
   },

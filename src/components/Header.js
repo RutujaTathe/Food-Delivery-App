@@ -3,11 +3,18 @@ import { LOGO_URL } from "../Utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import UserContext from "../Utils/UserContext";
+import { useSelector } from "react-redux";
+import { FaShoppingCart } from "react-icons/fa";
+
 const Header = () => {
   let [btnName, setBtnName] = useState("LogIn");
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
   console.log("data from context", loggedInUser);
+
+  //subscibing to the store using selector ,selector useSelector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("cartItems", cartItems);
   return (
     <div className="flex justify-between bg-blue-950 shadow-lg mb-2 h-24 text-white ">
       <div className="logo-container">
@@ -40,10 +47,13 @@ const Header = () => {
               Grocery
             </Link>
           </li>
-          <li className="px-4 font-bold underline">Cart</li>
-          {/* <li className="px-4 font-bold underline">
-            {loggedInUser}
-          </li> */}
+          <li className="px-4 font-bold underline ">
+            <Link to="/cart" className="link flex items-center gap-1">
+              <FaShoppingCart />
+              <span>({cartItems.length})</span>
+            </Link>
+          </li>
+          <li className="px-4 font-bold ">{loggedInUser}</li>
 
           <button
             className="bg-blue-400 font-bold hover:bg-blue-200 hover:text-black mx-2 px-4 py-1 items-center "

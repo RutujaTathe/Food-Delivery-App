@@ -80,3 +80,11 @@ import component from "path";
 # Types of routing in web aap:
 1.client side routing
 2.server side routing(index.html): get the network call 
+
+# Redux ToolKit
+-Install libraries @reduxjs/toolkit and react-redux
+-Build our store
+-connect our store to our app 
+-Slice (cartSlice)
+-dispatch(action)
+-selector
