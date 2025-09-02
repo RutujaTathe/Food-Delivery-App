@@ -11,7 +11,7 @@ import UserContext from "./Utils/UserContext.js";
 import { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import appStore from "./Utils/appStore.js";
-import Cart from "./components/cart.js";
+import Cart from "./components/Cart.js";
 const styleCard = {
   backgroundColor: "#f0f0f0",
 };
