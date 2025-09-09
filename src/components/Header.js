@@ -16,7 +16,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
   console.log("cartItems", cartItems);
   return (
-    <div className="flex justify-between bg-blue-950 shadow-lg mb-2 h-24 text-white ">
+    <div className="flex justify-between bg-blue-950 shadow-lg mb-2 h-24 text-white sticky top-0 z-50">
       <div className="logo-container">
         <img className="w-36 h-24 px-2 py-2 rounded-2xl " src={LOGO_URL} />
         <h1 className="app-name">Food Delivery App</h1>
