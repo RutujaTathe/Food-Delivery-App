@@ -1,9 +1,8 @@
 # Main App Interface:
 
 # 1.Food Ordering App UI:
+
 <img width="959" height="470" alt="Dashboard" src="https://github.com/user-attachments/assets/2e612880-48d3-4984-b974-b149214e04ac" />
-
-
 
 ![Screenshot 2025-06-27 000806](https://github.com/user-attachments/assets/b86ec153-e0b0-4b3a-a577-5f213a086a4a)
 
@@ -18,7 +17,6 @@
 # 2.Top Rated Restaurant UI:
 
 ![Screenshot 2025-06-25 155325](https://github.com/user-attachments/assets/dfc5b660-a032-44fb-8f62-2fcd5011713f)
-
 
 # React ✨🎉
 
@@ -78,13 +76,21 @@ import component from "path";
 - useEffect()
 
 # Types of routing in web aap:
+
 1.client side routing
-2.server side routing(index.html): get the network call 
+2.server side routing(index.html): get the network call
 
 # Redux ToolKit
+
 -Install libraries @reduxjs/toolkit and react-redux
 -Build our store
--connect our store to our app 
+-connect our store to our app
 -Slice (cartSlice)
 -dispatch(action)
 -selector
+
+# Types of testing:
+
+- unit testing: single unit tested
+- Integration Testing :component composition developer flow created for testing
+- End to end testing -e2e testing: testing happens from developer landing to website to developer leave the website
