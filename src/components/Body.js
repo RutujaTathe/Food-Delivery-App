@@ -121,14 +121,14 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
-        <div className="search m-4 p-4 flex items-center rounded-lg">
+        {/* <div className="search m-4 p-4 flex items-center rounded-lg">
           <label>UserName: </label>
           <input
             className="border border-black p-2"
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
           ></input>
-        </div>
+        </div> */}
       </div>
       {/* <h2 className="title">{title}</h2> */}
       <div className="choose-menu">
