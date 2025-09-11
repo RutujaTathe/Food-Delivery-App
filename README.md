@@ -3,6 +3,9 @@
 # 1.Food Ordering App UI:
 
 <img width="959" height="470" alt="Dashboard" src="https://github.com/user-attachments/assets/2e612880-48d3-4984-b974-b149214e04ac" />
+<img width="959" height="476" alt="accordianpage" src="https://github.com/user-attachments/assets/430fac63-9682-4fcb-bb8d-f3db2e0da829" />
+<img width="959" height="470" alt="AddedItemsToCart" src="https://github.com/user-attachments/assets/c1ded380-ca6d-41f5-9779-aa8461d519e3" />
+<img width="958" height="474" alt="CartPage" src="https://github.com/user-attachments/assets/ec139b04-6bee-447e-8f72-c070ac6f464a" />
 
 ![Screenshot 2025-06-27 000806](https://github.com/user-attachments/assets/b86ec153-e0b0-4b3a-a577-5f213a086a4a)
 
